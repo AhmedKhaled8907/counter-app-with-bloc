@@ -11,7 +11,7 @@ class ThirdScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        backgroundColor: color,
         title: const Text('Third Screen'),
       ),
       body: BlocListener<CounterCubit, CounterState>(

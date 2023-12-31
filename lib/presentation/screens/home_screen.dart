@@ -12,7 +12,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        backgroundColor: color,
         title: const Text('Home Screen'),
       ),
       body: BlocListener<CounterCubit, CounterState>(
@@ -98,20 +98,24 @@ class HomeScreen extends StatelessWidget {
               ),
               const SizedBox(height: 24),
               MaterialButton(
-                color: Colors.redAccent,
+                color: Colors.red,
                 child: const Text(
                   'Go to the second page',
                   style: TextStyle(fontSize: 24),
                 ),
                 onPressed: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (_) => BlocProvider.value(
-                        value: BlocProvider.of<CounterCubit>(context),
-                        child: const SecondScreen(color: Colors.redAccent),
-                      ),
-                    ),
-                  );
+                  Navigator.of(context).pushNamed('/second');
+                },
+              ),
+              const SizedBox(height: 24),
+              MaterialButton(
+                color: Colors.green,
+                child: const Text(
+                  'Go to the Third page',
+                  style: TextStyle(fontSize: 24),
+                ),
+                onPressed: () {
+                  Navigator.of(context).pushNamed('/third');
                 },
               ),
             ],
