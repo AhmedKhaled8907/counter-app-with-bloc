@@ -12,15 +12,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => CounterCubit(),
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Counter App',
-        theme: ThemeData(
-          brightness: Brightness.dark,
-        ),
-        home: const HomeScreen(color: Colors.blueAccent),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Counter App',
+      theme: ThemeData(
+        brightness: Brightness.dark,
+      ),
+      home:  BlocProvider(
+        create: (context) => CounterCubit(),
+        child: const HomeScreen(color: Colors.blueAccent),
       ),
     );
   }

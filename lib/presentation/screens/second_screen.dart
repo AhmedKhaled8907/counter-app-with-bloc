@@ -1,4 +1,5 @@
 import 'package:counter_app/cubit/counter_cubit.dart';
+import 'package:counter_app/presentation/screens/third_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -97,12 +98,21 @@ class SecondScreen extends StatelessWidget {
               ),
               const SizedBox(height: 24),
               MaterialButton(
-                color: Colors.greenAccent,
-                onPressed: () {},
+                color: Colors.orange,
                 child: const Text(
                   'Go to the Third page',
                   style: TextStyle(fontSize: 24),
                 ),
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (_) => BlocProvider.value(
+                        value: BlocProvider.of<CounterCubit>(context),
+                        child: const ThirdScreen(color: Colors.orange),
+                      ),
+                    ),
+                  );
+                },
               ),
             ],
           ),
