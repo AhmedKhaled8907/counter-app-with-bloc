@@ -28,7 +28,8 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
-  cupertino_icons:
+  connectivity_plus: ^5.0.2
+  cupertino_icons: null
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.3
